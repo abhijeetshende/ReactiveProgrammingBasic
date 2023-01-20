@@ -12,6 +12,7 @@ interface sidebarLinks {
 export class AppComponent {
   title = 'reactiveProgrammingBasic';
   tutorialLinks: sidebarLinks[] = [
-    { linkname: 'Timer', routerLink: 'timer' }
+    { linkname: 'Timer', routerLink: 'timer' },
+    { linkname: 'CustomObservable', routerLink: 'customobserverable' }
   ];
 }
