@@ -6,20 +6,34 @@ import { interval, Observable, Subscription } from 'rxjs';
   templateUrl: './custom-observable.component.html',
   styleUrls: ['./custom-observable.component.scss'],
 })
-export class CustomObservableComponent implements OnInit,OnDestroy {
+export class CustomObservableComponent implements OnInit, OnDestroy {
   customObservable!: Observable<number>;
-  sub!:Subscription;
+  sub!: Subscription;
   ngOnInit(): void {
     this.customObservable = new Observable((observer) => {
       interval(1000).subscribe((i) => {
         // console.log('hello from custom Observable', i);
+
+        if (i > 3) {
+          observer.error('count greater than 3, stopping automatically');
+        } else if ((i > 2)) {
+          observer.complete();
+        }
         observer.next(i);
       });
     });
 
-    this.sub = this.customObservable.subscribe((data) => {
-      console.log('data from customObservable', data);
-    });
+    this.sub = this.customObservable.subscribe(
+      (data) => {
+        console.log('data from customObservable', data);
+      },
+      (error) => {
+        console.log('catching error in error handler', error);
+      },
+      () => {
+        console.log('observable is complete');
+      }
+    );
   }
   ngOnDestroy(): void {
     this.sub.unsubscribe();
