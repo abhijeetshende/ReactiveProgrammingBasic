@@ -1,5 +1,5 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { interval, map, Observable, Subscription } from 'rxjs';
+import { filter, interval, map, Observable, Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-custom-observable',
@@ -24,6 +24,7 @@ export class CustomObservableComponent implements OnInit, OnDestroy {
     });
 
     this.sub = this.customObservable.pipe(
+      filter((data)=> data> 0),
       map((data)=>{
         return  data*12 +" asdsadjahsdjha" ;
       })
