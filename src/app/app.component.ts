@@ -22,7 +22,8 @@ export class AppComponent implements OnInit {
   tutorialLinks: sidebarLinks[] = [
     { linkname: 'Timer', routerLink: 'timer' },
     { linkname: 'CustomObservable', routerLink: 'customobserverable' },
-    { linkname: 'Subjects', routerLink: 'subjects' }
+    { linkname: 'Subjects', routerLink: 'subjects' },
+    { linkname: 'TemplateForm', routerLink: 'templateForm' }
   ];
   
 }
