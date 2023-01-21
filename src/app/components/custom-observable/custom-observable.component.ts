@@ -1,5 +1,5 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { interval, Observable, Subscription } from 'rxjs';
+import { interval, map, Observable, Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-custom-observable',
@@ -23,7 +23,11 @@ export class CustomObservableComponent implements OnInit, OnDestroy {
       });
     });
 
-    this.sub = this.customObservable.subscribe(
+    this.sub = this.customObservable.pipe(
+      map((data)=>{
+        return  data*12 +" asdsadjahsdjha" ;
+      })
+    ).subscribe(
       (data) => {
         console.log('data from customObservable', data);
       },
