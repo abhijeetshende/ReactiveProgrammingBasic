@@ -1,5 +1,6 @@
 import { Component, ViewChild } from '@angular/core';
 import { NgForm } from '@angular/forms';
+import { timeout } from 'rxjs';
 
 @Component({
   selector: 'app-templateforms',
@@ -34,5 +35,22 @@ export class TemplateformsComponent {
       },
       gender: 'Female',
     });
+    this.copyData();
   }
+
+  copyData(){
+    let formCopyObject :{
+          userDetails: {
+            email:string,
+            name: string;
+          },
+          gender:string;
+    } = {...this.f.value}
+    console.log("copy data",formCopyObject);
+  setTimeout(()=>{
+    this.f.reset();
+  },1000)  
+  }
+
+
 }
