@@ -7,7 +7,8 @@ import { NgForm } from '@angular/forms';
   styleUrls: ['./templateforms.component.scss'],
 })
 export class TemplateformsComponent {
+  gender='Female';
   submitForm(form: NgForm) {
-    console.log(form);
+    console.log(form.value);
   }
 }
