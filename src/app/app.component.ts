@@ -23,7 +23,8 @@ export class AppComponent implements OnInit {
     { linkname: 'Timer', routerLink: 'timer' },
     { linkname: 'CustomObservable', routerLink: 'customobserverable' },
     { linkname: 'Subjects', routerLink: 'subjects' },
-    { linkname: 'TemplateForm', routerLink: 'templateForm' }
+    { linkname: 'TemplateForm', routerLink: 'templateForm' },
+    { linkname: 'ReactiveForm', routerLink: 'reactiveForm' },
   ];
   
 }

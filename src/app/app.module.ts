@@ -7,7 +7,8 @@ import { TimerComponent } from './components/timer/timer.component';
 import { CustomObservableComponent } from './components/custom-observable/custom-observable.component';
 import { SubjectsComponent } from './components/subjects/subjects.component';
 import { TemplateformsComponent } from './components/templateforms/templateforms.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ReactiveFormComponent } from './components/reactive-form/reactive-form.component';
 
 @NgModule({
   declarations: [
@@ -15,12 +16,14 @@ import { FormsModule } from '@angular/forms';
     TimerComponent,
     CustomObservableComponent,
     SubjectsComponent,
-    TemplateformsComponent
+    TemplateformsComponent,
+    ReactiveFormComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
