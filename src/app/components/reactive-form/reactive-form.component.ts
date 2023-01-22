@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { FormArray, FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-reactive-form',
@@ -18,6 +18,7 @@ export class ReactiveFormComponent implements OnInit {
       ]),
       email: new FormControl(null, [Validators.email, Validators.required]),
       gender: new FormControl('Male'),
+      hobbies:new FormArray([])
     });
   }
   userFrom!: FormGroup;
@@ -26,6 +27,12 @@ export class ReactiveFormComponent implements OnInit {
     console.log(this.userFrom.value);
   }
 
+
+  addComponent(){
+    const control = new FormControl(null);
+   (<FormArray>this.userFrom.get('hobbies')).push(control)
+   
+  }
   isRestrictedName(control: FormControl) {
     if (this.restrictedName.includes(control.value)) {
       console.log('name matched');
@@ -34,4 +41,8 @@ export class ReactiveFormComponent implements OnInit {
     }
     return null;
   }
+  get hobbieControl(){
+    return (<FormArray>this.userFrom.get('hobbies')).controls;
+  }
+  
 }

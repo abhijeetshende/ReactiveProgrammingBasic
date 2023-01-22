@@ -1,43 +1,54 @@
 <p>reactive-form works!</p>
 
-<form  (ngSubmit)="submitForm()"  [formGroup]="userFrom">
+<form (ngSubmit)="submitForm()" [formGroup]="userFrom">
     <div class="form-group">
-      <label for="name">Name</label>
-      <input type="text"
-        class="form-control" name="name" id="name" aria-describedby="helpId" placeholder="" formControlName="name">
-      <small id="helpId" class="form-text text-muted bg-warning"
-      *ngIf="!userFrom.get('name')?.valid && userFrom.get('name')?.touched"
-      >
-    <span *ngIf="userFrom.get('name')?.errors?.['isRestricted']">
-        please use something else
-        {{userFrom.get('name')?.errors?.['isRestricted']}}
-    </span>
+        <label for="name">Name</label>
+        <input type="text" class="form-control" name="name" id="name" aria-describedby="helpId" placeholder=""
+            formControlName="name">
+        <small id="helpId" class="form-text text-muted bg-warning"
+            *ngIf="!userFrom.get('name')?.valid && userFrom.get('name')?.touched">
+            <span *ngIf="userFrom.get('name')?.errors?.['isRestricted']">
+                please use something else
+                {{userFrom.get('name')?.errors?.['isRestricted']}}
+            </span>
 
-    
-    </small>
+
+        </small>
     </div>
 
     <div class="form-group">
-      <label for="email">email</label>
-      <input type="text"
-        class="form-control" name="email" id="email" aria-describedby="helpId" placeholder="" formControlName="email">
-      <!-- <small id="helpId" class="form-text text-muted">Help text</small> -->
+        <label for="email">email</label>
+        <input type="text" class="form-control" name="email" id="email" aria-describedby="helpId" placeholder=""
+            formControlName="email">
+        <!-- <small id="helpId" class="form-text text-muted">Help text</small> -->
     </div>
 
     <div class="form-group">
-      <label for="gender">gender</label>
-      <select class="form-control" name="gender" id="gender" formControlName="gender">
-        <option>Male</option>
-        <option>Female</option>
-      </select>
+        <label for="gender">gender</label>
+        <select class="form-control" name="gender" id="gender" formControlName="gender">
+            <option>Male</option>
+            <option>Female</option>
+        </select>
     </div>
+
+
 
     <div class="form-check">
         <label class="form-check-label">
-        <input type="radio" class="form-check-input" name="" id="" value="checkedValue" checked>
-        Display value
-      </label>
+            <input type="radio" class="form-check-input" name="" id="" value="checkedValue" checked>
+            Display value
+        </label>
     </div>
 
-    <button type="submit" class="btn btn-primary"   [disabled]="!userFrom.valid">Submit</button>
+    <div formArrayName="hobbies">
+        <div class="form-group" *ngFor="let control of hobbieControl; let i = index;" >
+            <label for=""></label>
+            <input type="text" class="form-control" name="i" [formControlName]=i id="" aria-describedby="helpId" placeholder="">
+            <small id="helpId" class="form-text text-muted">Help text</small>
+        </div>
+    </div>
+
+
+    <button type="submit" class="btn btn-primary" [disabled]="!userFrom.valid">Submit</button>
+    <button type="button" class="btn btn-primary" (click)="addComponent()">Add Control</button>
 </form>
