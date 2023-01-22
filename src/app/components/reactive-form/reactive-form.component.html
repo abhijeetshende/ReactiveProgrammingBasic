@@ -8,9 +8,9 @@
       <small id="helpId" class="form-text text-muted bg-warning"
       *ngIf="!userFrom.get('name')?.valid && userFrom.get('name')?.touched"
       >
-    <span *ngIf="userFrom.get('name')?.errors?.['isRestrictedName']">
+    <span *ngIf="userFrom.get('name')?.errors?.['isRestricted']">
         please use something else
-        {{userFrom.get('name')?.errors?.['isRestrictedName']}}
+        {{userFrom.get('name')?.errors?.['isRestricted']}}
     </span>
 
     
