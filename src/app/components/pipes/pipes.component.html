@@ -1,0 +1,17 @@
+<p>pipes works!</p>
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      <ul>
+        <li *ngFor="let user of users">
+          <p>
+            <span>{{ user.name | uppercase| lengthShorter:5:'A' }}</span>
+          </p>
+          <p>
+            <span>{{ user.address.zipcode| uppercase }}</span>
+          </p>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>

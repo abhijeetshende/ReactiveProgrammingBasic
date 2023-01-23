@@ -9,6 +9,8 @@ import { SubjectsComponent } from './components/subjects/subjects.component';
 import { TemplateformsComponent } from './components/templateforms/templateforms.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ReactiveFormComponent } from './components/reactive-form/reactive-form.component';
+import { PipesComponent } from './components/pipes/pipes.component';
+import { CustomPipe } from './components/pipes/custom.pipe';
 
 @NgModule({
   declarations: [
@@ -17,7 +19,9 @@ import { ReactiveFormComponent } from './components/reactive-form/reactive-form.
     CustomObservableComponent,
     SubjectsComponent,
     TemplateformsComponent,
-    ReactiveFormComponent
+    ReactiveFormComponent,
+    PipesComponent,
+    CustomPipe
   ],
   imports: [
     BrowserModule,

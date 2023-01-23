@@ -25,6 +25,7 @@ export class AppComponent implements OnInit {
     { linkname: 'Subjects', routerLink: 'subjects' },
     { linkname: 'TemplateForm', routerLink: 'templateForm' },
     { linkname: 'ReactiveForm', routerLink: 'reactiveForm' },
+    { linkname: 'Pipes', routerLink: 'pipes' },
   ];
   
 }
