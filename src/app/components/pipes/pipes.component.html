@@ -17,7 +17,7 @@
             <span>{{ user.name | lengthShorter:5:'A' }}</span>
           </p>
           <p>
-            <span>{{ user.address.zipcode| uppercase }}</span>
+            <span>{{ user.name | upperCaseAsync | async }}</span>
           </p>
         </li>
       </ul>

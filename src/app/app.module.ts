@@ -12,6 +12,7 @@ import { ReactiveFormComponent } from './components/reactive-form/reactive-form.
 import { PipesComponent } from './components/pipes/pipes.component';
 import { CustomPipe } from './components/pipes/custom.pipe';
 import { FilterPipe } from './components/pipes/filter.pipe';
+import { FilterAsyncPipe } from './components/pipes/filter-async.pipe';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { FilterPipe } from './components/pipes/filter.pipe';
     ReactiveFormComponent,
     PipesComponent,
     CustomPipe,
-    FilterPipe
+    FilterPipe,
+    FilterAsyncPipe
   ],
   imports: [
     BrowserModule,
