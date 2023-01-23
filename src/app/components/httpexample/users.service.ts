@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
 export interface User {
@@ -17,9 +17,17 @@ export class UsersService {
     return this.http.post(this.url, user);
   }
   getUser() {
-    return this.http.get(this.url);
+    let queryParams = new HttpParams()
+    queryParams.set('hello','world')
+    queryParams.set('hello2','world2')
+    let customHeader = new HttpHeaders().set('hello','worldHhhhhhhhhhahhahahahah')
+    return this.http.get(this.url, {
+      observe: 'response',
+      headers:customHeader,
+      params:queryParams
+    });
   }
-  deleteUser(){
+  deleteUser() {
     return this.http.delete(this.url);
   }
 }
