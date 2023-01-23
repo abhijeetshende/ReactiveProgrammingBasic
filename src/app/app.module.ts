@@ -14,7 +14,9 @@ import { CustomPipe } from './components/pipes/custom.pipe';
 import { FilterPipe } from './components/pipes/filter.pipe';
 import { FilterAsyncPipe } from './components/pipes/filter-async.pipe';
 import { HttpexampleComponent } from './components/httpexample/httpexample.component';
-import {HttpClientModule} from '@angular/common/http'
+import {HttpClientModule, HTTP_INTERCEPTORS} from '@angular/common/http'
+import { RequestInterceptorService } from './components/httpexample/interceptors/request-interceptor.service';
+import { ResponseInterceptorInterceptor } from './components/httpexample/interceptors/response-interceptor.interceptor';
 @NgModule({
   declarations: [
     AppComponent,
@@ -36,7 +38,18 @@ import {HttpClientModule} from '@angular/common/http'
     ReactiveFormsModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [
+    {
+      provide:HTTP_INTERCEPTORS,
+      useClass:RequestInterceptorService,
+      multi:true
+    },
+    {
+      provide:HTTP_INTERCEPTORS,
+      useClass:ResponseInterceptorInterceptor,
+      multi:true
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
