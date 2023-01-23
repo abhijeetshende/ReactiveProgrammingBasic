@@ -11,6 +11,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ReactiveFormComponent } from './components/reactive-form/reactive-form.component';
 import { PipesComponent } from './components/pipes/pipes.component';
 import { CustomPipe } from './components/pipes/custom.pipe';
+import { FilterPipe } from './components/pipes/filter.pipe';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { CustomPipe } from './components/pipes/custom.pipe';
     TemplateformsComponent,
     ReactiveFormComponent,
     PipesComponent,
-    CustomPipe
+    CustomPipe,
+    FilterPipe
   ],
   imports: [
     BrowserModule,

@@ -7,6 +7,7 @@ import { user } from './user.type';
   styleUrls: ['./pipes.component.scss']
 })
 export class PipesComponent {
+  filterString:string ='';
   users :user[]=[
     {
       "id": 1,
