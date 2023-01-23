@@ -20,6 +20,17 @@ export class ReactiveFormComponent implements OnInit {
       gender: new FormControl('Male'),
       hobbies:new FormArray([])
     });
+
+
+    //get the current values of form
+    this.userFrom.valueChanges.subscribe((data)=>{
+      console.log("value changes",data);
+    })
+
+    this.userFrom.statusChanges.subscribe((value)=>{
+    console.log('returns the state of form whether valid on invalid', value);
+    
+    })
   }
   userFrom!: FormGroup;
   submitForm() {
