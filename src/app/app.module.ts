@@ -13,7 +13,8 @@ import { PipesComponent } from './components/pipes/pipes.component';
 import { CustomPipe } from './components/pipes/custom.pipe';
 import { FilterPipe } from './components/pipes/filter.pipe';
 import { FilterAsyncPipe } from './components/pipes/filter-async.pipe';
-
+import { HttpexampleComponent } from './components/httpexample/httpexample.component';
+import {HttpClientModule} from '@angular/common/http'
 @NgModule({
   declarations: [
     AppComponent,
@@ -25,13 +26,15 @@ import { FilterAsyncPipe } from './components/pipes/filter-async.pipe';
     PipesComponent,
     CustomPipe,
     FilterPipe,
-    FilterAsyncPipe
+    FilterAsyncPipe,
+    HttpexampleComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
