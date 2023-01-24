@@ -29,7 +29,7 @@ import { ResponseInterceptorInterceptor } from './components/httpexample/interce
     CustomPipe,
     FilterPipe,
     FilterAsyncPipe,
-    HttpexampleComponent
+    HttpexampleComponent,
   ],
   imports: [
     BrowserModule,

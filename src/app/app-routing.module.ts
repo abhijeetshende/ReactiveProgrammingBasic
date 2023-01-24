@@ -16,6 +16,7 @@ const routes: Routes = [
   {path:'reactiveForm',component:ReactiveFormComponent},
   {path:'pipes',component:PipesComponent},
   {path:'http',component:HttpexampleComponent},
+  { path: 'orders', loadChildren: () => import('./orders/orders.module').then(m => m.OrdersModule) },
 ];
 
 @NgModule({

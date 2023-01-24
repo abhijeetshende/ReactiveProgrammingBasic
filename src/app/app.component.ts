@@ -27,6 +27,7 @@ export class AppComponent implements OnInit {
     { linkname: 'ReactiveForm', routerLink: 'reactiveForm' },
     { linkname: 'Pipes', routerLink: 'pipes' },
     { linkname: 'Http', routerLink: 'http' },
+    { linkname: 'OrderModuleLazy', routerLink: 'orders' },
   ];
   
 }
